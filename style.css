@@ -1,0 +1,572 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f3f4f7;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #24252a;
+  color: #fff;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f76c6c;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f76c6c, #8f5de8);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content span {
+  color: #fff;
+  background-color: #f76c6c;
+  padding: 0.2rem 0.5rem;
+}
+
+.hero .btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #fff;
+  color: #8f5de8;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #8f5de8;
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#about,
+#skills,
+#projects,
+#contact {
+  background-color: #f3f4f7;
+  margin-top: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill {
+  background-color: #8f5de8;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+.project {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #f3f4f7;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Skill Bars */
+.skills .skill-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.skill-bar span {
+  width: 120px;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  color: #fff;
+  text-align: right;
+  padding: 0.4rem;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.skill-bar .progress-bar {
+  width: 50%; /* Adjust percentage here as needed */
+}
+/* Services Section */
+.services-section {
+  padding: 4rem 2rem;
+  background-color: #f3f4f7;
+  text-align: center;
+}
+
+.inner-width {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.border {
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 0.5rem auto 2rem;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+  }
+}
+
+@media (max-width: 575px) {
+  .services-container {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+
+.service-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.service-desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/*projects container*/
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .projects-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 items per row on large screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .projects-container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 items per row on medium to large screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 items per row on small screens */
+  }
+}
+
+@media (max-width: 575px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* 1 item per row on extra small screens */
+  }
+}
+
+.project-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px; /* Set a fixed height for the thumbnail */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-desc {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.view-project-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-project-btn:hover {
+  background-color: #0056b3;
+}
+
+/* css for contact page */
+.contact-page {
+  margin-top: 130px;
+  overflow: hidden;
+}
+.contact-page .heading .heading-1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+.contact-page .heading .heading-2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  color: crimson;
+  line-height: 0px;
+}
+
+.contact-page .heading .border-left {
+  margin-left: 500px;
+  margin-top: 19px;
+  height: 3px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.contact-page .heading .border-right {
+  margin-left: 760px;
+  margin-top: -22px;
+  height: 3px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.contact-info {
+  margin-left: 150px;
+  text-align: left;
+}
+.contact-page .contact-info .margin-text {
+  margin-left: 20px;
+}
+.contact-page .contact-info .text-1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 21px;
+  font-weight: bold;
+}
+.contact-page .contact-info .text-2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.contact-page .contact-info .margin-text .text-3,
+.contact-page .contact-info .margin-text .text-5,
+.contact-page .contact-info .margin-text .text-7 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 500;
+}
+.contact-page .contact-info .margin-text .text-4 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  /* font-weight:normal; */
+}
+.contact-page .contact-info .margin-text .text-6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  /* font-weight:normal; */
+}
+.contact-page .contact-info .margin-text .text-8 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  /* font-weight:normal; */
+}
+.contact-form {
+  text-align: center;
+  margin-left: 700px;
+  margin-top: -248px;
+}
+.contact-form .form-head {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-size: 22px;
+  font-weight: bold;
+}
+.inline {
+  height: 40px;
+  width: 40%;
+  padding: 0px 10px;
+  /* border:none; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+input:focus {
+  outline: none;
+}
+.form-subject {
+  height: 40px;
+  width: 80%;
+  padding: 0px 10px;
+  /* border:none; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+input[type="textarea"] {
+  height: 40px;
+  width: 80%;
+  padding: 0px 10px;
+  /* border:none; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+input[type="submit"] {
+  background-color: rgb(220, 20, 60);
+  border: none;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  position: relative;
+  right: 180px;
+  width: 160px;
+  height: 50px;
+}
+input[type="submit"]:hover {
+  background-color: rgba(220, 20, 60, 0.9);
+}
+.form-head {
+  position: relative;
+  left: -198px;
+}
+/* css for footer */
+/* footer section styling */
+footer {
+  background-color: #111;
+  height: 40px;
+}
+footer p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+}
+footer p span {
+  color: crimson;
+}
+
+/* Animations */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
