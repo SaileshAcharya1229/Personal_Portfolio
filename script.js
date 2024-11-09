@@ -19,3 +19,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".animate").forEach((section) => {
   observer.observe(section);
 });
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+  this.classList.toggle("active");
+  document.querySelector("nav ul").classList.toggle("active");
+});
